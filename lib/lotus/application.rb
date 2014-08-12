@@ -4,6 +4,7 @@ require 'lotus/configuration'
 require 'lotus/loader'
 require 'lotus/rendering_policy'
 require 'lotus/middleware'
+require 'lotus/routing/builder'
 
 module Lotus
   # A full stack Lotus application
