@@ -708,6 +708,43 @@ module Lotus
       end
     end
 
+    # Application route point mount.
+    #
+    # Specify a point mount for the application, by passing a String.
+    #
+    # By default it's an empty String.
+    #
+    # @since x.x.x
+    #
+    # @example Getting the value
+    #   require 'lotus'
+    #
+    #   module Bookshelf
+    #     class Application < Lotus::Application
+    #     end
+    #   end
+    #
+    #   Bookshelf::Application.configuration.mount_at
+    #     # => nil
+    #
+    # @example Setting the value, by passing a block
+    #   require 'lotus'
+    #
+    #   module Bookshelf
+    #     class Application < Lotus::Application
+    #       configure do
+    #         mount_at 'backend'
+    #       end
+    #     end
+    #   end
+    #
+    #   Bookshelf::Application.configuration.mount_at
+    #     # => backend
+    def mount_at(mount_at = '')
+      @mount_at = mount_at unless mount_at.empty?
+      @mount_at
+    end
+
     # The URI host for this application.
     # This is used by the router helpers to generate absolute URLs.
     #

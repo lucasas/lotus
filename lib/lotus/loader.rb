@@ -82,6 +82,7 @@ module Lotus
         scheme:      configuration.scheme,
         host:        configuration.host,
         port:        configuration.port,
+        mount_at:    configuration.mount_at,
         &configuration.routes
       )
 
