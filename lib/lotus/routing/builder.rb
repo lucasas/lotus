@@ -8,9 +8,7 @@ module Lotus
 
       def mount(app)
         @app = app.new
-        @app.routes.each do |route|
-          @router.add_route(route)
-        end
+        @router.mount @app, at: "/"
       end
 
       def call(env)
